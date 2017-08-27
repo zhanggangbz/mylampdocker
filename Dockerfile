@@ -27,7 +27,8 @@ RUN chmod 755 /*.sh
 ADD apache_default /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
-RUN mkdir -p /var/lib/mysql/webapp && rm -fr /var/www/html && ln -s /var/lib/mysql/webapp /var/www/html
+RUN mkdir -p /var/lib/mysql/tipask3/public && rm -fr /var/www/html && ln -s /var/lib/mysql/tipask3/public /var/www/html
+RUN chown -R www-data:www-data /var/lib/mysql/tipask3 /var/www/html
 
 #Environment variables to configure php
 ENV PHP_UPLOAD_MAX_FILESIZE 10M

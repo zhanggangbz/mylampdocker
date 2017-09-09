@@ -28,7 +28,7 @@ ADD apache_default /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
 RUN mkdir -p /var/lib/mysql/webapp && rm -fr /var/www/html && ln -s /var/lib/mysql/webapp /var/www/html
-RUN chmod 755 -R /var/lib/mysql/webapp
+RUN chmod 777 -R /var/lib/mysql/webapp
 RUN chown -R www-data:www-data /var/lib/mysql/webapp /var/www/html
 
 #Environment variables to configure php
